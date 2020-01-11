@@ -6,7 +6,7 @@ compiler:
 - gcc
 sudo: required
 env:
-- QT=511 BREW=ex PPA=beineri/opt-qt511-trusty
+- QT=58 BREW=ex PPA=beineri/opt-qt58-trusty
 matrix:
   allow_failures:
   exclude:
