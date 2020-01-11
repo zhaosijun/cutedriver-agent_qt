@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+export DH_VERBOSE=1
+
+export CFLAGS := $(shell dpkg-buildflags --get CFLAGS) $(shell dpkg-buildflags --get CPPFLAGS) -Wno-deprecated-declarations -Wno-unused-variable
+export CXXFLAGS := $(shell dpkg-buildflags --get CXXFLAGS) $(shell dpkg-buildflags --get CPPFLAGS) -Wno-deprecated-declarations -Wno-unused-variable
+export LDFLAGS := $(shell dpkg-buildflags --get LDFLAGS) -Wl,--as-needed
+export QMAKE_OPTIONS := -r CONFIG+=debian
+export QT_SELECT := qt5
+
+%:
+	dh $@ --parallel --builddirectory=builddir
+
+override_dh_auto_configure:
+	mkdir builddir
+	cd builddir ; \
+		qmake $(QMAKE_OPTIONS) $(CURDIR)
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
+
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/tmp
+	cd  builddir; \
+		INSTALL_ROOT=$(CURDIR)/debian/tmp $(MAKE) install
+#	dh_auto_install --destdir=../../debian/tmp/
+
+override_dh_install:
+	dh_install --sourcedir=debian/tmp -v --fail-missing
+

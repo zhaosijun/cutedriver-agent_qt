@@ -1,0 +1,20 @@
+#ignore generated files
+moc_*
+Makefile
+*.loc
+*.inf
+*.mmp
+*.rss
+*.cache
+*.sis
+*stubs*
+*.o
+*.Release
+*.Debug
+*.*~
+\#*
+\.#*
+TAGS
+*.pro.user
+*.log
+.qmake.stash
