@@ -1,21 +1,15 @@
 language: cpp
 os:
 - linux
-- osx
 dist: trusty
 compiler:
 - gcc
 sudo: required
 env:
-- QT=58 BREW=ex PPA=beineri/opt-qt58-trusty
+- QT=511 BREW=ex PPA=beineri/opt-qt511-trusty
 matrix:
   allow_failures:
   exclude:
-  - os: osx
-    env: QT=58 BREW=ex PPA=beineri/opt-qt58-trusty
-  - os: osx
-    compiler: gcc
-    env: QT=5  BREW=5
 before_install:
 - '[[ "$TRAVIS_OS_NAME" != linux || -z "$PPA" ]] || sudo add-apt-repository -y ppa:$PPA'
 - '[ "$TRAVIS_OS_NAME" != linux ] || sudo apt-get -qy update'
