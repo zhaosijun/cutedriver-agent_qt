@@ -8,15 +8,12 @@ Makefile
 *.cache
 *.sis
 *stubs*
-*.pkg
 *.o
 *.Release
 *.Debug
 *.*~
-lib/
 \#*
 \.#*
-bin/
 TAGS
 *.pro.user
 *.log
