@@ -1,0 +1,13 @@
+QT_CPU_FEATURES.x86_64 = mmx sse sse2
+QT.global_private.enabled_features = sse2 dbus dbus-linked gui libudev posix_fallocate reduce_exports reduce_relocations system-zlib widgets
+QT.global_private.disabled_features = private_tests release_tools
+PKG_CONFIG_EXECUTABLE = /usr/bin/pkg-config
+QMAKE_LIBS_DBUS = -ldbus-1
+QMAKE_INCDIR_DBUS = /usr/include/dbus-1.0 /usr/lib/x86_64-linux-gnu/dbus-1.0/include
+QMAKE_LIBS_LIBUDEV = -ludev
+QT_COORD_TYPE = double
+QMAKE_LIBS_ZLIB = -lz
+CONFIG -= precompile_header
+CONFIG += use_gold_linker sse2 sse3 ssse3 sse4_1 sse4_2 avx avx2 compile_examples enable_new_dtags force_debug_info largefile
+QT_BUILD_PARTS += libs examples tools
+QT_HOST_CFLAGS_DBUS += -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include

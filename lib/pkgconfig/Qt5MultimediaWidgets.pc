@@ -1,0 +1,14 @@
+prefix=/opt/qt58
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+
+Name: Qt5 MultimediaWidgets
+Description: Qt MultimediaWidgets module
+Version: 5.8.0
+Libs: -L${libdir} -lQt5MultimediaWidgets 
+Libs.private: -L/opt/qt58/lib -lQt5Multimedia -L/opt/qt58/lib -lQt5Widgets -lQt5Gui -lQt5Network -lQt5Core -lpthread -lpulse-mainloop-glib -lpulse -lglib-2.0 -lQt5OpenGL -L/opt/qt58/lib -lQt5Widgets -lQt5Gui -lQt5Core -lpthread -lGL  
+Cflags: -I${includedir}/QtMultimediaWidgets -I${includedir}
+Requires: Qt5Core Qt5Gui Qt5Multimedia Qt5Widgets
+

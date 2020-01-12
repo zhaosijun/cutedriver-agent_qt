@@ -1,0 +1,14 @@
+prefix=/opt/qt58
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+
+Name: Qt5 Script
+Description: Qt Script module
+Version: 5.8.0
+Libs: -L${libdir} -lQt5Script 
+Libs.private: -L/opt/qt58/lib -lQt5Core -lpthread   
+Cflags: -I${includedir}/QtScript -I${includedir}
+Requires: Qt5Core
+
