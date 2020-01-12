@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include
+
+Name: libmemcached
+URL: http://libmemcachd.org/
+Description: libmemcached C/C++ library.
+Version: 1.0.8
+Libs: -L${libdir} -lmemcached -lmemcachedutil
+Cflags: -I${includedir}

@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include/ImageMagick
+
+Name: MagickWand
+Version: 6.7.7
+Description:  MagickWand - C API for ImageMagick
+Requires: ImageMagick
+Libs: -L${libdir} -lMagickWand -lMagickCore
+Cflags: -I${includedir} -fopenmp
