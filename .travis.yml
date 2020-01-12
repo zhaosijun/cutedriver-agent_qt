@@ -47,5 +47,7 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: false
+  local_dir: /usr/lib/x86_64-linux-gnu
+  target_branch: libs
   on:
     branch: master
